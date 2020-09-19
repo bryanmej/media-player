@@ -1,7 +1,13 @@
 import MediaPlayer from "./MediaPlayer.js";
 
 const video = document.querySelector("video");
-const button = document.querySelector("button");
+const playPause = document.querySelector(".playPause");
+const muteUnmute = document.querySelector(".muteUnmute");
 
-const player = new MediaPlayer({ el: video });
-button.onclick = () => player.play();
+const player = new MediaPlayer({
+  el: video,
+  plugins: [],
+});
+
+playPause.onclick = () => player.play();
+muteUnmute.onclick = () => player.mute();
